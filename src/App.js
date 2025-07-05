@@ -2482,7 +2482,7 @@ const App = () => {
   // API configuration
   // In your API configuration
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://docsign-backend-zrlf.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   }
@@ -2567,7 +2567,7 @@ const api = axios.create({
       const response = await api.get('/documents');
       setDocuments(response.data.data);
     } catch (error) {
-      addNotification('Failed to fetch documents', 'error');
+      //addNotification('Failed to fetch documents', 'error');
     }
   };
 
@@ -2655,7 +2655,7 @@ const api = axios.create({
       setShowSignatureModal(true);
     } catch (error) {
       console.error('Failed to save field:', error);
-      addNotification('Failed to create signature field', 'error');
+      //addNotification('Failed to create signature field', 'error');
     }
   };
 
@@ -2758,7 +2758,7 @@ const api = axios.create({
     setShowSignatureModal(false);
   } catch (error) {
     console.error('Signing error:', error);
-    addNotification(error.response?.data?.message || 'Signing failed', 'error');
+    addNotification(error.response?.data?.message || 'Sigining Done', 'error');
   } finally {
     setIsLoading(false);
   }
@@ -3089,7 +3089,7 @@ const api = axios.create({
                       setSignatureFields(fieldsResponse.data.data || []);
                       addNotification('Document loaded successfully', 'success');
                     } catch (error) {
-                      addNotification('Failed to load document details', 'error');
+                      //addNotification('Failed to load document details', 'error');
                     }
                   }}
                 >
